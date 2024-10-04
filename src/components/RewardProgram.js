@@ -1,43 +1,68 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  NavLink,
+} from "react-router-dom";
 import Transactions from "./Transactions";
 import Rewards from "./Rewards";
 import { getTransactions, getRewards } from "../api/api";
-import "../stylessheet/main.css";
+import "../stylessheet/main.css"; // Ensure this is the correct path for your CSS
 
 export default function RewardProgram() {
-  const [transactions, setTransactions] = useState([]);
-  const [rewards, setRewards] = useState(null);
-  const [showRewards, setShowRewards] = useState(false);
+  const [transactions, setTransactions] = React.useState([]);
+  const [rewards, setRewards] = React.useState(null);
 
   // Fetch transactions on component mount
-  useEffect(() => {
+  React.useEffect(() => {
     getTransactions().then((data) => setTransactions(data));
   }, []);
 
-  // Fetch rewards when 'Get Rewards' button is clicked
-  const handleGetRewards = () => {
-    getRewards().then((rewardsData) => {
-      setRewards(rewardsData);
-      setShowRewards(true); // Switch to Rewards component
-    });
-  };
-  const handleBackToTransactions = () => {
-    setShowRewards(false); // Switch back to Transactions component
+  // Fetch rewards when navigating to Rewards tab
+  const fetchRewards = () => {
+    if (!rewards) {
+      getRewards().then((rewardsData) => setRewards(rewardsData));
+    }
   };
 
   return (
-    <div>
-      <h1>Customer Rewards Program</h1>
+    <Router>
+      <div className="reward-program-container">
+        <h1>Customer Rewards Program</h1>
 
-      {/** Show Transactions or Rewards based on state */}
-      {showRewards ? (
-        <Rewards rewards={rewards} onBack={handleBackToTransactions} />
-      ) : (
-        <Transactions
-          transactions={transactions}
-          onGetRewards={handleGetRewards}
-        />
-      )}
-    </div>
+        {/** Navigation Tabs */}
+        <nav className="tab-navigation">
+          <NavLink
+            exact
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "tab-link active-tab" : "tab-link"
+            }
+          >
+            Transactions
+          </NavLink>
+          <NavLink
+            to="/rewards"
+            className={({ isActive }) =>
+              isActive ? "tab-link active-tab" : "tab-link"
+            }
+            onClick={fetchRewards}
+          >
+            Rewards
+          </NavLink>
+        </nav>
+
+        {/** Route-based component switching */}
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<Transactions transactions={transactions} />}
+          />
+          <Route path="/rewards" element={<Rewards rewards={rewards} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }

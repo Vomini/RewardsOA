@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDebounce } from "../utils/useDebounce"; // Import your custom hook
 import Table from "../components/Table"; // Import the reusable table component
 
-export default function Transactions({ transactions, onGetRewards }) {
+export default function Transactions({ transactions }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredTransactions, setFilteredTransactions] =
     useState(transactions);
@@ -57,10 +57,7 @@ export default function Transactions({ transactions, onGetRewards }) {
         )}
       />
 
-      {/** Button to get rewards */}
-      <button onClick={onGetRewards} style={{ marginTop: "20px" }}>
-        Get Rewards
-      </button>
+    
     </div>
   );
 }

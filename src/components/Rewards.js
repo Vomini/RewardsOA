@@ -3,7 +3,7 @@ import { useDebounce } from "../utils/useDebounce"; // Import the custom hook
 import { getCustomerRewardsById } from "../api/api"; // Assuming this is in the API file
 import Table from "../components/Table"; // Import the reusable table component
 
-export default function Rewards({ rewards, onBack }) {
+export default function Rewards({ rewards }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredRewards, setFilteredRewards] = useState(null);
 
@@ -100,10 +100,7 @@ export default function Rewards({ rewards, onBack }) {
         <p>No results found for customer ID "{debouncedSearchQuery}".</p>
       )}
 
-      {/** Back Button */}
-      <button onClick={onBack} style={{ marginTop: "20px" }}>
-        Back to Transactions
-      </button>
+    
     </div>
   );
 }
