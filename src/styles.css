@@ -1,0 +1,105 @@
+/* Main container */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Title */
+h1 {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* Search input and label */
+label {
+  font-size: 16px;
+  color: #333;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #4caf50;
+  color: white;
+  text-transform: uppercase;
+}
+
+thead th {
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+tbody td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+tbody td:first-child {
+  text-align: left;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+/* Style for alternating row colors */
+tbody tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+
+/* Style for customer name and ID row */
+tbody td[rowspan] {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Hover effect on the table row */
+tbody tr:hover {
+  background-color: #e0f7fa;
+}
