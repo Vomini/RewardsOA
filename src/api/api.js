@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/transactionsData";
 import { calculateRewards } from "../utils/rewards";
 
 // Mock API to fetch all transactions

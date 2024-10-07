@@ -1,4 +1,4 @@
-import RewardProgram from "./components/RewardProgram";
+import RewardProgram from "./containers/RewardProgram";
 
 export default function App() {
   return (

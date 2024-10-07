@@ -1,0 +1,73 @@
+import { formatDateWithTimezone } from "../utils/formatTime";
+export const data = [
+  {
+    customer_name: "Samantha",
+    customer_id: 4,
+    transaction_date: formatDateWithTimezone("2024-03-19"),
+    amount: 346,
+    transaction_id: 1000,
+  },
+  {
+    customer_name: "Samantha",
+    customer_id: 4,
+    transaction_date: formatDateWithTimezone("2024-01-17"),
+    amount: 192,
+    transaction_id: 1001,
+  },
+  {
+    customer_name: "Samantha",
+    customer_id: 4,
+    transaction_date: formatDateWithTimezone("2024-02-23"),
+    amount: 136,
+    transaction_id: 1002,
+  },
+  {
+    customer_name: "Aaron",
+    customer_id: 2,
+    transaction_date: formatDateWithTimezone("2024-03-07"),
+    amount: 62,
+    transaction_id: 1003,
+  },
+  {
+    customer_name: "Carter",
+    customer_id: 1,
+    transaction_date: formatDateWithTimezone("2024-01-22"),
+    amount: 89,
+    transaction_id: 1004,
+  },
+  {
+    customer_name: "Aaron",
+    customer_id: 2,
+    transaction_date: formatDateWithTimezone("2024-01-20"),
+    amount: 123,
+    transaction_id: 1005,
+  },
+  {
+    customer_name: "Aaron",
+    customer_id: 2,
+    transaction_date: formatDateWithTimezone("2024-03-18"),
+    amount: 171,
+    transaction_id: 1006,
+  },
+  {
+    customer_name: "Aaron",
+    customer_id: 2,
+    transaction_date: formatDateWithTimezone("2024-03-05"),
+    amount: 471,
+    transaction_id: 1007,
+  },
+  {
+    customer_name: "Maricela",
+    customer_id: 3,
+    transaction_date: formatDateWithTimezone("2024-01-28"),
+    amount: 120,
+    transaction_id: 1008,
+  },
+  {
+    customer_name: "Samantha",
+    customer_id: 4,
+    transaction_date: formatDateWithTimezone("2024-01-05"),
+    amount: 109,
+    transaction_id: 1009,
+  },
+];
